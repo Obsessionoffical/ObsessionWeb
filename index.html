@@ -6,9 +6,6 @@
     <h4>Üdv! Itt jársz a Tech Obsession oldalán.</h4>
   </body>
 <body>
-<!-- =======================================================
-     1. A FÜLEK / GOMBOK (Ezekkel váltasz a külön oldalak között)
-     ======================================================= -->
 <div style="display: flex; border-bottom: 2px solid #cccccc; background-color: #ffffff; font-family: Arial, sans-serif;">
   
   <button class="yt-gomb" onclick="valtsYt(event, 'minden-adat')" style="background: none; border: none; padding: 15px 20px; font-size: 15px; font-weight: bold; color: #000000; border-bottom: 3px solid #000000; cursor: pointer; margin-bottom: -2px;">
@@ -29,11 +26,6 @@
 
 </div>
 
-<!-- =======================================================
-     2. A KÜLÖNÁLLÓ OLDALAK TARTALMA (Ide írhatsz)
-     ======================================================= -->
-
-<!-- FŐOLDAL (Csak ez látszik az elején, a többi el van rejtve!) -->
 <div id="minden-adat" class="yt-tartalom" style="display: block; padding: 20px; font-family: Arial, sans-serif;">
   <h2>Főoldal</h2>
   
@@ -50,13 +42,13 @@
 <!-- VIDEÓK OLDAL -->
 <div id="videok-adat" class="yt-tartalom" style="display: none; padding: 20px; font-family: Arial, sans-serif;">
   <h2>A te videóid</h2>
-  <p>Ez egy teljesen külön oldal! Ide jönnek majd a videós anyagaid.</p>
+  <p>Videók</p>
 </div>
 
 <!-- SHORTS OLDAL -->
 <div id="shorts-adat" class="yt-tartalom" style="display: none; padding: 20px; font-family: Arial, sans-serif;">
-  <h2>Shorts videók</h2>
-  <p>Ez is egy különálló rész, ide írhatsz a rövid videóidról.</p>
+  <h2>Shorts</h2>
+  <p>Shorts</p>
 </div>
 
 <!-- BEJEGYZÉSEK OLDAL -->
@@ -74,18 +66,14 @@
   </p>
 </div>
 
-<!-- =======================================================
-     3. A JAVÍTOTT MŰKÖDÉST BIZTOSÍTÓ JAVASCRIPT KÓD
-     ======================================================= -->
+<!-- script -->
 <script>
 function valtsYt(esemeny, tartalomId) {
-  // 1. Minden létező tartalom dobozt teljesen elrejtünk
   var dobozok = document.getElementsByClassName("yt-tartalom");
   for (var i = 0; i < dobozok.length; i++) {
     dobozok[i].style.display = "none";
   }
   
-  // 2. Minden gombot visszaállítunk alaphelyzetbe (szürke, nincs aláhúzás)
   var gombok = document.getElementsByClassName("yt-gomb");
   for (var i = 0; i < gombok.length; i++) {
     gombok[i].style.color = "#606060";
@@ -93,10 +81,8 @@ function valtsYt(esemeny, tartalomId) {
     gombok[i].style.borderBottom = "3px solid transparent";
   }
   
-  // 3. Csakis a kiválasztott fül oldalát tesszük láthatóvá
   document.getElementById(tartalomId).style.display = "block";
   
-  // 4. A megnyomott gombot feketére színezzük és aláhúzzuk
   var aktivGomb = esemeny.currentTarget;
   aktivGomb.style.color = "#000000";
   aktivGomb.style.fontWeight = "bold";
@@ -106,9 +92,9 @@ function valtsYt(esemeny, tartalomId) {
 </body>
 </head>
 <body>
-<!-- Egyedi YouTube Gomb -->
+<!-- YouTube Gomb -->
 <a href="https://youtube.com/@tech-obsession-i7?si=5bSySYT-GEGseZid" target="_blank" class="yt-egyedi-gomb">
-  <!-- YouTube SVG Ikon -->
+  <!-- YouTube Ikon -->
   <svg viewBox="0 0 24 24" class="yt-ikon"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
   Feliratkozás YouTube-on
 </a>
@@ -116,18 +102,18 @@ function valtsYt(esemeny, tartalomId) {
   .yt-egyedi-gomb {
     display: inline-flex;
     align-items: center;
-    background-color: #FF0000; /* Hivatalos YouTube piros */
+    background-color: #FF0000;
     color: white;
     text-decoration: none;
     font-family: Roboto, Arial, sans-serif;
     font-weight: 500;
     padding: 10px 20px;
-    border-radius: 4px; /* Enyhén lekerekített sarkok */
+    border-radius: 4px; 
     font-size: 14px;
     transition: background-color 0.2s;
   }
   .yt-egyedi-gomb:hover {
-    background-color: #CC0000; /* Sötétebb piros, ha ráviszed az egeret */
+    background-color: #CC0000; 
   }
   .yt-ikon {
     width: 20px;
