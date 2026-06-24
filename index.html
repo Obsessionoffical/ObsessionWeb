@@ -1,0 +1,150 @@
+<head>
+  <h1>Tech Obsession <a href="https://youtube.com/@tech-obsession-i7?si=5bSySYT-GEGseZid">
+  <button type="button">YouTube</button>
+</a></h1>
+  <body>
+    <h4>Üdv! Itt jársz a Tech Obsession oldalán.</h4>
+  </body>
+<body>
+<!-- =======================================================
+     1. A FÜLEK / GOMBOK (Ezekkel váltasz a külön oldalak között)
+     ======================================================= -->
+<div style="display: flex; border-bottom: 2px solid #cccccc; background-color: #ffffff; font-family: Arial, sans-serif;">
+  
+  <button class="yt-gomb" onclick="valtsYt(event, 'minden-adat')" style="background: none; border: none; padding: 15px 20px; font-size: 15px; font-weight: bold; color: #000000; border-bottom: 3px solid #000000; cursor: pointer; margin-bottom: -2px;">
+    Főoldal
+  </button>
+  
+  <button class="yt-gomb" onclick="valtsYt(event, 'videok-adat')" style="background: none; border: none; padding: 15px 20px; font-size: 15px; font-weight: normal; color: #606060; border-bottom: 3px solid transparent; cursor: pointer; margin-bottom: -2px;">
+    Videók
+  </button>
+  
+  <button class="yt-gomb" onclick="valtsYt(event, 'shorts-adat')" style="background: none; border: none; padding: 15px 20px; font-size: 15px; font-weight: normal; color: #606060; border-bottom: 3px solid transparent; cursor: pointer; margin-bottom: -2px;">
+    Shorts
+  </button>
+  
+  <button class="yt-gomb" onclick="valtsYt(event, 'posztok-adat')" style="background: none; border: none; padding: 15px 20px; font-size: 15px; font-weight: normal; color: #606060; border-bottom: 3px solid transparent; cursor: pointer; margin-bottom: -2px;">
+    Bejegyzések
+  </button>
+
+</div>
+
+<!-- =======================================================
+     2. A KÜLÖNÁLLÓ OLDALAK TARTALMA (Ide írhatsz)
+     ======================================================= -->
+
+<!-- FŐOLDAL (Csak ez látszik az elején, a többi el van rejtve!) -->
+<div id="minden-adat" class="yt-tartalom" style="display: block; padding: 20px; font-family: Arial, sans-serif;">
+  <h2>Főoldal</h2>
+  
+  <body>
+      <h5>A weboldal létrehozásának egy nagy története van. Amikor éppen utaztam a buszon nem volt internet sem letöltött játék. Nem volt nálam semmi. Mivel Erdély, haláli sötét vol és nem is én ültem az ablaknál. Még rengeteg óra volt hátra. Aztán arra gondoltam hogy mivel Android-os vagyok ezért bármi lehetséges. Arra gondoltam, létrehozok egy weboldalt ahol a videókat, bejegyzéseket hírdetem meg. ennek lényege hogy legyen egy reklám mentes oldal. Tehetném Facebookra is. De ez csak a jelenleg, ami kikerülhet Facebookra. Később itt lesz a vásárlás meg egyéb dolog. Ehhez pedig szükség van rád, rátok. Nélkületek nem lehetne létrehozni.</h5>
+  <h6>2026.06.07. 9:42</h6>
+
+  <img src="20260603_194745.jpg" alt="Egy aranyos cica a dobozban, aminek az oldalán Happy felirat található" width="300" height="400"> 
+  <h5>Az ajtó előtt macskát találtam.</h5>
+  <h6>2026.06.05. xx:xx</h6>
+  </body>
+</div>
+
+<!-- VIDEÓK OLDAL -->
+<div id="videok-adat" class="yt-tartalom" style="display: none; padding: 20px; font-family: Arial, sans-serif;">
+  <h2>A te videóid</h2>
+  <p>Ez egy teljesen külön oldal! Ide jönnek majd a videós anyagaid.</p>
+</div>
+
+<!-- SHORTS OLDAL -->
+<div id="shorts-adat" class="yt-tartalom" style="display: none; padding: 20px; font-family: Arial, sans-serif;">
+  <h2>Shorts videók</h2>
+  <p>Ez is egy különálló rész, ide írhatsz a rövid videóidról.</p>
+</div>
+
+<!-- BEJEGYZÉSEK OLDAL -->
+<div id="posztok-adat" class="yt-tartalom" style="display: none; padding: 20px; font-family: Arial, sans-serif;">
+  <h2>Bejegyzések és képek</h2>
+  <p>
+  <body>
+      <h5>A weboldal létrehozásának egy nagy története van. Amikor éppen utaztam a buszon nem volt internet sem letöltött játék. Nem volt nálam semmi. Mivel Erdély, haláli sötét vol és nem is én ültem az ablaknál. Még rengeteg óra volt hátra. Aztán arra gondoltam hogy mivel Android-os vagyok ezért bármi lehetséges. Arra gondoltam, létrehozok egy weboldalt ahol a videókat, bejegyzéseket hírdetem meg. ennek lényege hogy legyen egy reklám mentes oldal. Tehetném Facebookra is. De ez csak a jelenleg, ami kikerülhet Facebookra. Később itt lesz a vásárlás meg egyéb dolog. Ehhez pedig szükség van rád, rátok. Nélkületek nem lehetne létrehozni.</h5>
+  <h6>2026.06.07. 9:42</h6>
+
+  <img src="20260603_194745.jpg" alt="Egy aranyos cica a dobozban, aminek az oldalán Happy felirat található" width="300" height="400"> 
+  <h5>Az ajtó előtt macskát találtam.</h5>
+  <h6>2026.06.05. xx:xx</h6>
+</body>
+  </p>
+</div>
+
+<!-- =======================================================
+     3. A JAVÍTOTT MŰKÖDÉST BIZTOSÍTÓ JAVASCRIPT KÓD
+     ======================================================= -->
+<script>
+function valtsYt(esemeny, tartalomId) {
+  // 1. Minden létező tartalom dobozt teljesen elrejtünk
+  var dobozok = document.getElementsByClassName("yt-tartalom");
+  for (var i = 0; i < dobozok.length; i++) {
+    dobozok[i].style.display = "none";
+  }
+  
+  // 2. Minden gombot visszaállítunk alaphelyzetbe (szürke, nincs aláhúzás)
+  var gombok = document.getElementsByClassName("yt-gomb");
+  for (var i = 0; i < gombok.length; i++) {
+    gombok[i].style.color = "#606060";
+    gombok[i].style.fontWeight = "normal";
+    gombok[i].style.borderBottom = "3px solid transparent";
+  }
+  
+  // 3. Csakis a kiválasztott fül oldalát tesszük láthatóvá
+  document.getElementById(tartalomId).style.display = "block";
+  
+  // 4. A megnyomott gombot feketére színezzük és aláhúzzuk
+  var aktivGomb = esemeny.currentTarget;
+  aktivGomb.style.color = "#000000";
+  aktivGomb.style.fontWeight = "bold";
+  aktivGomb.style.borderBottom = "3px solid #000000";
+}
+</script>
+</body>
+</head>
+<body>
+<!-- Egyedi YouTube Gomb -->
+<a href="https://youtube.com/@tech-obsession-i7?si=5bSySYT-GEGseZid" target="_blank" class="yt-egyedi-gomb">
+  <!-- YouTube SVG Ikon -->
+  <svg viewBox="0 0 24 24" class="yt-ikon"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+  Feliratkozás YouTube-on
+</a>
+<style>
+  .yt-egyedi-gomb {
+    display: inline-flex;
+    align-items: center;
+    background-color: #FF0000; /* Hivatalos YouTube piros */
+    color: white;
+    text-decoration: none;
+    font-family: Roboto, Arial, sans-serif;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 4px; /* Enyhén lekerekített sarkok */
+    font-size: 14px;
+    transition: background-color 0.2s;
+  }
+  .yt-egyedi-gomb:hover {
+    background-color: #CC0000; /* Sötétebb piros, ha ráviszed az egeret */
+  }
+  .yt-ikon {
+    width: 20px;
+    height: 20px;
+    fill: white;
+    margin-right: 8px;
+  }
+</style>
+</body>
+<body>
+    <h6>Minden jog fenntartva!</h6>
+  <h6>2024-<span id="aktualis-ev"></span></h6>
+  <script>
+  document.getElementById("aktualis-ev").textContent = new Date().getFullYear();
+</script>
+
+  </body>
+  <body>
+  <h6>Az oldalt az Obsession szolgáltatja<h6/>
+</body>
